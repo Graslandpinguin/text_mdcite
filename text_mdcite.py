@@ -5,6 +5,8 @@
 
     creates my own citation style with markdown. Reduces typing.
 
+    Based on: https://moinmo.in/ParserMarket/Markdown
+
     Syntax:
 
         To use in a code block:
