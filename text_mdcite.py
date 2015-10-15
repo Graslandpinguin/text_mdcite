@@ -55,14 +55,13 @@ class Parser:
 
         author = lines[0]
         link = lines[1]
-        citation = lines[2:]
+        citation_lines = lines[2:]
 
-        citation_md = ["> " + line for line in citation]
+        output_md = ">"
+        output_md += "\n>".join(citation_lines)
 
-        output_md = ""
-        for line in citation_md:
-            output_md += line +"\n"
-        output_md += ">\n"
+
+        output_md += "\n>\n"
         output_md += u" – [{}]({})".format(author, link)
 
         output_html = markdown(output_md, **self.args)
