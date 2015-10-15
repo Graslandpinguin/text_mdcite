@@ -60,7 +60,6 @@ class Parser:
         output_md = ">"
         output_md += "\n>".join(citation_lines)
 
-
         output_md += "\n>\n"
         output_md += u" – [{}]({})".format(author, link)
 
