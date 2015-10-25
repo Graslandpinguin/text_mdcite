@@ -12,7 +12,7 @@ To use in a code block:
     {{{#!text_mdcite
     <Author>
     <Link>
-    <Markdown citationtext here>
+    <multiline citationtext here (in markdown syntax)>
     }}}
 
 creates:
