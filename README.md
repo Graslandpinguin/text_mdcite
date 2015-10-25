@@ -1,9 +1,9 @@
 # text_mdcite
 MoinMoin - Parser for a Markdown - Citation
 
-    Creates my own citation style with markdown. Reduces typing.
+    Creates my own style citations with markdown. Reduces typing.
 ##Dependencies
- * markdown library
+ * python markdown library
 
 ##Syntax:
 
