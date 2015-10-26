@@ -9,6 +9,7 @@ MoinMoin - Parser for a Markdown - Citation
 
 ##Dependencies
  * python markdown library
+ * [bleach](https://github.com/mozilla/bleach)
 
 ##Syntax:
 
@@ -23,8 +24,8 @@ To use in a code block:
 creates:
 
     <blockquote>
-      <p>markdown2html citation body</p>
-      <p>– <cite><a href="https://en.wikipedia.org/wiki/Multi-licensing#Business_models">Wikipedia</a></cite>
+      <p>html citation text</p>
+      <p>– <cite><a href="<Link>"><Author></a></cite>
       </p>
     </blockquote>
 
@@ -45,9 +46,7 @@ This parser requires the Python Markdown library and [bleach](https://github.com
 ## Copyright
 Copyright 2015 Simon Lenz
 
-heavily based on the moinmoin markdown parser by Jason R. Fruit.
-
-https://moinmo.in/ParserMarket/Markdown
+heavily based on the moinmoin [markdown parser by Jason R. Fruit](https://moinmo.in/ParserMarket/Markdown).
  
 ## License
 released under GPL-3
