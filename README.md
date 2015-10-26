@@ -22,7 +22,7 @@ creates:
 
 ##Installation
 
-tested with Moin 1.8
+tested with Moin 1.9.8
 
 For general installation instructions, see [ParserMarket/InstallingParsers](https://moinmo.in/ParserMarket/InstallingParsers). This parser requires the Python Markdown library.
 
