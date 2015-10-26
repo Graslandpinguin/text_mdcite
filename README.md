@@ -1,5 +1,5 @@
 # text_mdcite
-MoinMoin - Parser for a Markdown - Citation
+Parser for markdown citations for the MoinMoin wiki software
 
     creates markdown citations. 
 
