@@ -44,7 +44,7 @@ For general installation instructions, see [ParserMarket/InstallingParsers](http
 This parser requires the Python Markdown library and [bleach](https://github.com/mozilla/bleach).
 
 ## Copyright
-Copyright 2015 Simon Lenz
+Copyright 2015 Simon Lenz (post@simon-lenz.de)
 
 heavily based on the moinmoin [markdown parser by Jason R. Fruit](https://moinmo.in/ParserMarket/Markdown).
  
