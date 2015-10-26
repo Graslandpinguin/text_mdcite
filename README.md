@@ -1,7 +1,12 @@
 # text_mdcite
 MoinMoin - Parser for a Markdown - Citation
 
-    Creates my own style citations with markdown. Reduces typing.
+    creates markdown citations. 
+
+    reduces typing.
+
+    style from http://stackoverflow.com/a/2002150/376172
+
 ##Dependencies
  * python markdown library
 
@@ -16,9 +21,18 @@ To use in a code block:
     }}}
 
 creates:
+
+    <blockquote>
+      <p>markdown2html citation body</p>
+      <p>– <cite><a href="https://en.wikipedia.org/wiki/Multi-licensing#Business_models">Wikipedia</a></cite>
+      </p>
+    </blockquote>
+
+which will be rendered as:
+
 >citation
 >   
-> – [Author](link)
+> – <cite>[Author](link)</cite>
 
 ##Installation
 
@@ -26,7 +40,7 @@ tested with Moin 1.9.8
 
 For general installation instructions, see [ParserMarket/InstallingParsers](https://moinmo.in/ParserMarket/InstallingParsers). 
 
-This parser requires the Python Markdown library.
+This parser requires the Python Markdown library and [bleach](https://github.com/mozilla/bleach).
 
 ## Copyright
 Copyright 2015 Simon Lenz
