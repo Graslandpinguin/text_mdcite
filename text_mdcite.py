@@ -25,34 +25,10 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-"""
-    MoinMoin - Parser for a Markdown - Citation
-
-    creates my own citation style with markdown. Reduces typing.
-
-    Based on: https://moinmo.in/ParserMarket/Markdown
-
-    Syntax:
-
-        To use in a code block:
-    
-            {{{#!text_mdcite
-            <Author>
-            <Link>
-            <add markdown citationtext here>
-            }}}
-
-        creates:
-
-            <blockquote>
-            citation
-
-             – [Author](link)
-            </blockquote>
-
-"""
-
 from markdown import markdown
+
+# for html sanitizing
+import bleach
 
 Dependencies = ['user']
 
@@ -69,26 +45,23 @@ class Parser:
     def __init__(self, raw, request, **kw):
         self.raw = raw
         self.request = request
-
-        try:
-            self.args = request.cfg.markdownargs
-        except AttributeError:
-            self.args = { 'safe_mode': 'replace' }
 	
     def format(self, formatter):
-        lines = self.raw.splitlines()
+        # clean input from malicious code
+        sanitized_input = bleach.clean(self.raw)
+        lines = sanitized_input.splitlines()
 
         author = lines[0]
         link = lines[1]
         citation_lines = lines[2:]
 
+        # prefix every line of the citation body with a ">"
         output_md = ">"
         output_md += "\n>".join(citation_lines)
-
         output_md += "\n>\n"
-        output_md += u" – [{}]({})".format(author, link)
+        output_md += u" – <cite>[{}]({})</cite>".format(author, link)
+        output_html = markdown(output_md)
 
-        output_html = markdown(output_md, **self.args)
         try:
             self.request.write(formatter.rawHTML(output_html))
         except:
